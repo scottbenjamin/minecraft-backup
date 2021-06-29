@@ -529,7 +529,7 @@ do-backup () {
     else
       RESTIC_HOSTNAME_OPTION=("--host" "$RESTIC_HOSTNAME")
     fi
-    restic backup -r "$RESTIC_REPO" "${SERVER_WORLDS[@]}" --time "$RESTIC_TIMESTAMP" "$QUIET" "${RESTIC_HOSTNAME_OPTION[@]}"
+    restic backup -r "$RESTIC_REPO" "${SERVER_WORLDS[@]}" --time "$RESTIC_TIMESTAMP" "$QUIET" "${RESTIC_HOSTNAME_OPTION[@]}" --limit-upload 1250
     ARCHIVE_EXIT_CODE=$?
     if [ "$ARCHIVE_EXIT_CODE" -eq 3 ]; then
       log-warning "Incomplete snapshot taken (some files could not be read)"
