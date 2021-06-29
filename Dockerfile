@@ -1,6 +1,6 @@
 FROM alpine
 
-LABEL org.opencontainers.image.source=https://github.com/nicolaschan/minecraft-backup
+LABEL org.opencontainers.image.source=https://github.com/scottbenjamin/minecraft-backup
 
 RUN apk add bash coreutils xxd restic util-linux openssh
 
